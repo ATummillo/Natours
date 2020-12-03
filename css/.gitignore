@@ -1,6 +1,0 @@
-# This is here just so that the CSS directory stays tracked but empty.
-
-# Ignore everything in this directory
-*
-# Except this file
-!.gitignore
