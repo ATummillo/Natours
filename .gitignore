@@ -120,6 +120,9 @@ dist
 *.css.map
 *.sass.map
 *.scss.map
+css/*.prefix.css
+css/*.comp.css
+css/*.concat.css
 css/style.css
 
 # Misc
