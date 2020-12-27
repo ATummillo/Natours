@@ -28,4 +28,10 @@ RUN npm install
 # compile css
 RUN npm run build:css
 
+# prep the server
+RUN python3 manage.py collectstatic \
+    && python3 manage.py makemigrations \
+    && python3 manage.py migrate
+
+# run the server using the built in Django server for dev
 CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
