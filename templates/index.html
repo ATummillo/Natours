@@ -55,7 +55,7 @@
 
     <header class="header">
       <div class="header__logo-box">
-        <img src="img/logo-white.png" alt="Logo" class="header__logo" />
+        <img src="{% static 'img/logo-white.png' %}" alt="Logo" class="header__logo" />
       </div>
       <div class="header__text-box">
         <h1 class="heading-primary">
@@ -97,25 +97,25 @@
           <div class="col-1-of-2">
             <div class="composition">
               <img
-                srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                srcset="{% static 'img/nat-1.jpg' %} 300w, {% static 'img/nat-1-large.jpg' %} 1000w"
                 sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
                 alt="Photo 1"
                 class="composition__photo composition__photo--p1"
-                src="img/nat-1-large.jpg"
+                src="{% static 'img/nat-1-large.jpg' %}"
               />
               <img
-                srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                srcset="{% static 'img/nat-2.jpg' %} 300w, {% static 'img/nat-2-large.jpg' %} 1000w"
                 sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
                 alt="Photo 2"
                 class="composition__photo composition__photo--p2"
-                src="img/nat-2-large.jpg"
+                src="{% static 'img/nat-2-large.jpg' %}"
               />
               <img
-                srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                srcset="{% static 'img/nat-3.jpg' %} 300w, {% static 'img/nat-3-large.jpg' %} 1000w"
                 sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
                 alt="Photo 3"
                 class="composition__photo composition__photo--p3"
-                src="img/nat-3-large.jpg"
+                src="{% static 'img/nat-3-large.jpg' %}"
               />
             </div>
           </div>
@@ -280,8 +280,8 @@
       <section class="section-stories">
         <div class="bg-video">
           <video class="bg-video__content" autoplay muted loop>
-            <source src="img/video.mp4" type="video/mp4" />
-            <source src="img/video.webm" type="video/webm" />
+            <source src="{% static 'img/video.mp4' %}" type="video/mp4" />
+            <source src="{% static 'img/video.webm' %}" type="video/webm" />
             Your browser is not supported!
           </video>
         </div>
@@ -294,7 +294,7 @@
           <div class="story">
             <figure class="story__shape">
               <img
-                src="img/nat-8.jpg"
+                src="{% static 'img/nat-8.jpg' %}"
                 alt="Person on a tour"
                 class="story__img"
               />
@@ -322,7 +322,7 @@
           <div class="story">
             <figure class="story__shape">
               <img
-                src="img/nat-9.jpg"
+                src="{% static 'img/nat-9.jpg' %}"
                 alt="Person on a tour"
                 class="story__img"
               />
@@ -416,15 +416,15 @@
         <picture class="footer__logo">
           <source
             srcset="
-              img/logo-green-small-1x.png 1x,
-              img/logo-green-small-2x.png 2x
+              {% static 'img/logo-green-small-1x.png' %} 1x,
+              {% static 'img/logo-green-small-2x.png' %} 2x
             "
             media="(max-width: 37.5em)"
           />
           <img
-            srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
+            srcset="{% static 'img/logo-green-1x.png' %} 1x, {% static 'img/logo-green-2x.png' %} 2x"
             alt="Full logo"
-            src="img/logo-green-2x.png"
+            src="{% static 'img/logo-green-2x.png' %}"
           />
         </picture>
       </div>
@@ -466,8 +466,8 @@
     <div class="popup" id="popup">
       <div class="popup__content">
         <div class="popup__left">
-          <img src="img/nat-8.jpg" alt="Tour photo" class="popup__img" />
-          <img src="img/nat-9.jpg" alt="Tour photo" class="popup__img" />
+          <img src="{% static 'img/nat-8.jpg' %}" alt="Tour photo" class="popup__img" />
+          <img src="{% static 'img/nat-9.jpg' %}" alt="Tour photo" class="popup__img" />
         </div>
         <div class="popup__right">
           <a href="#section-tours" class="popup__close">&times;</a>
