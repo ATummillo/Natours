@@ -133,3 +133,4 @@ css/style.css
 env
 db.sqlite3
 **/__pycache__
+static/css/style.*
