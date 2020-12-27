@@ -29,9 +29,13 @@ RUN npm install
 RUN npm run build:css
 
 # prep the server
-RUN python3 manage.py collectstatic \
-    && python3 manage.py makemigrations \
-    && python3 manage.py migrate
+RUN python3 manage.py collectstatic --no-input \
+    && python3 manage.py makemigrations --no-input \
+    && python3 manage.py migrate --no-input
+
+# add a new user to the alpine instance and set as the current user
+RUN adduser -D myuser
+USER myuser
 
 # run the server using the built in Django server for dev
 CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
