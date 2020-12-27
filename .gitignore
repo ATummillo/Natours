@@ -127,3 +127,8 @@ css/style.css
 
 # Misc
 **/*.DS_Store
+.vscode
+
+# Python
+env
+db.sqlite3
