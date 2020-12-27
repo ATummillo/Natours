@@ -129,6 +129,7 @@ css/style.css
 **/*.DS_Store
 .vscode
 
-# Python
+# Python/Django
 env
 db.sqlite3
+**/__pycache__
