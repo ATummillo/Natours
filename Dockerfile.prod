@@ -1,6 +1,16 @@
 # pull official base image
 FROM node:15.4-alpine
 
+# update and upgrade alpine packages
+RUN apk update && apk upgrade
+
+# install python3
+RUN apk add --no-cache python3 \
+    && ln -s /usr/bin/python3 /bin/python \
+    && ln -s /usr/bin/pip3 /bin/pip \
+    && python -m ensurepip \
+    && pip install --upgrade pip
+
 # set working directory
 WORKDIR /app
 
@@ -9,17 +19,11 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV DEBUG=0
 
-# install python3
-RUN apk update \
-    && apk add --no-cache python3 \
-    && python3 -m ensurepip \
-    && pip3 install --no-cache --upgrade pip
-
 # copy project
 COPY . .
 
 # install python dependencies
-RUN pip3 install -r requirements.txt
+RUN pip install -r requirements.txt
 
 
 # install node packages
@@ -29,9 +33,9 @@ RUN npm install
 RUN npm run build:css
 
 # prep the server
-RUN python3 manage.py collectstatic --no-input \
-    && python3 manage.py makemigrations --no-input \
-    && python3 manage.py migrate --no-input
+RUN python manage.py collectstatic --no-input \
+    && python manage.py makemigrations --no-input \
+    && python manage.py migrate --no-input
 
 # add a new user to the alpine instance and set as the current user
 RUN adduser -D myuser
