@@ -38,4 +38,5 @@ RUN adduser -D myuser
 USER myuser
 
 # run the server using the built in Django server for dev
-CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
+# CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD gunicorn app.wsgi:application --bind 0.0.0.0:8000
