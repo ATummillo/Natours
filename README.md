@@ -1,6 +1,6 @@
 # Natours
 
-![Image](https://drive.google.com/uc?export=view&id=1UzlT19LahnyQLwgIOWYiL-UEmf4xEn-H)
+![Image](./assets/img/natours_README.png)
 
 > This project focusses on animations and the old way of laying out a webpage using the CSS Float property.
 
